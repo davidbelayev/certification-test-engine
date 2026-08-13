@@ -1,0 +1,1216 @@
+{
+  "metadata": {
+    "id": "sy0-701-4-1-to-4-4-40q-20260813",
+    "title": "CompTIA Security+ SY0-701",
+    "scope": "Objectives 4.1-4.4: Security Operations",
+    "masteryThreshold": 95
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "stem": "A vulnerability scanner reports a critical flaw on an externally accessible server. The server owner states that the affected software component was removed several months ago. What should the security analyst do FIRST?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Patch the server immediately and schedule a follow-up scan"
+        },
+        {
+          "id": "c2",
+          "text": "Confirm whether the reported vulnerability is actually present"
+        },
+        {
+          "id": "c3",
+          "text": "Segment the server immediately and document a compensating control"
+        },
+        {
+          "id": "c4",
+          "text": "Submit an exception immediately and remove the finding from reports"
+        }
+      ],
+      "correct": [
+        "c2"
+      ],
+      "objective": "4.3 - Vulnerability analysis: confirmation and false positives",
+      "explanation": "Before choosing remediation, the analyst should verify whether the reported condition exists. If the vulnerable component is absent, the scan result may be a false positive.",
+      "distinction": "A critical scanner rating establishes urgency but does not eliminate the need to validate a disputed finding before remediation."
+    },
+    {
+      "id": "q2",
+      "stem": "A company permits employees to use personally owned smartphones for corporate email. Security administrators need to enforce device encryption, require screen locks, and remotely remove corporate data when an employee leaves. Which solution BEST meets these requirements?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Mobile device management"
+        },
+        {
+          "id": "c2",
+          "text": "Network access control"
+        },
+        {
+          "id": "c3",
+          "text": "Security information and event management"
+        },
+        {
+          "id": "c4",
+          "text": "Data loss prevention"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Mobile solutions: MDM",
+      "explanation": "MDM centrally enforces security configurations and supports remote management of enrolled mobile devices.",
+      "distinction": "NAC can control whether a device connects to a network, while MDM directly manages the security configuration and corporate data on the device."
+    },
+    {
+      "id": "q3",
+      "stem": "A network operations team wants to identify which internal hosts are communicating with external destinations, including source and destination addresses, ports, protocols, and traffic volumes, without collecting complete packet payloads. Which tool is MOST appropriate?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "NetFlow"
+        },
+        {
+          "id": "c2",
+          "text": "SNMP traps"
+        },
+        {
+          "id": "c3",
+          "text": "SCAP"
+        },
+        {
+          "id": "c4",
+          "text": "Static code analysis"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring tools: NetFlow",
+      "explanation": "NetFlow summarizes network conversations and provides metadata such as endpoints, ports, protocols, and transferred volume without requiring full packet capture.",
+      "distinction": "SNMP traps report device events and conditions, whereas NetFlow describes network traffic flows."
+    },
+    {
+      "id": "q4",
+      "stem": "An organization is replacing several storage systems containing highly sensitive information. Policy requires the media to be rendered permanently unusable and evidence of compliant disposal to be retained for auditors. Which approach BEST satisfies the requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Overwrite the media, record the erase operation, and return the drives to inventory"
+        },
+        {
+          "id": "c2",
+          "text": "Encrypt the media, revoke the encryption keys, and retain the devices in storage"
+        },
+        {
+          "id": "c3",
+          "text": "Physically destroy the media, document the process, and obtain disposal certification"
+        },
+        {
+          "id": "c4",
+          "text": "Reformat the media, remove asset labels, and transfer the devices to a recycler"
+        }
+      ],
+      "correct": [
+        "c3"
+      ],
+      "objective": "4.2 - Disposal/decommissioning: destruction and certification",
+      "explanation": "Physical destruction makes the media unusable, while certification provides evidence that the required disposal process occurred.",
+      "distinction": "Sanitization may permit reuse, but the scenario explicitly requires permanent unusability plus auditable evidence."
+    },
+    {
+      "id": "q5",
+      "stem": "A development team wants to detect unsafe functions and insecure coding patterns before an application is executed. Which technique BEST addresses this requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Static code analysis"
+        },
+        {
+          "id": "c2",
+          "text": "Dynamic application analysis"
+        },
+        {
+          "id": "c3",
+          "text": "Network vulnerability scanning"
+        },
+        {
+          "id": "c4",
+          "text": "Runtime behavior monitoring"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Application security: static code analysis",
+      "explanation": "Static analysis examines source code or compiled code without executing the application and can identify insecure coding constructs early.",
+      "distinction": "Dynamic analysis evaluates an executing application, whereas the requirement specifically calls for identifying problems before execution."
+    },
+    {
+      "id": "q6",
+      "stem": "A vulnerability management team has four confirmed findings. Which vulnerability should normally receive the HIGHEST remediation priority?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "CVSS 9.1 on an isolated laboratory system containing synthetic data"
+        },
+        {
+          "id": "c2",
+          "text": "CVSS 8.4 on an internet-facing payment server with active exploitation reported"
+        },
+        {
+          "id": "c3",
+          "text": "CVSS 9.4 on a powered-off development server retained for future testing"
+        },
+        {
+          "id": "c4",
+          "text": "CVSS 8.7 on an internal workstation protected by several compensating controls"
+        }
+      ],
+      "correct": [
+        "c2"
+      ],
+      "objective": "4.3 - Vulnerability analysis: prioritization and environmental variables",
+      "explanation": "Prioritization should account for organizational exposure and threat context, not just the numerical CVSS score. An internet-facing production payment system with active exploitation represents the greatest immediate organizational risk.",
+      "distinction": "CVSS contributes to prioritization, but environmental exposure and active exploitation can make a slightly lower-scored vulnerability more urgent."
+    },
+    {
+      "id": "q7",
+      "stem": "A company is deploying wireless access points throughout a newly constructed office. Administrators need to determine signal coverage, interference, dead zones, and appropriate access-point placement before final installation. Which activity is MOST appropriate?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Conduct a wireless site survey and generate a heat map"
+        },
+        {
+          "id": "c2",
+          "text": "Perform a vulnerability scan and generate an exposure report"
+        },
+        {
+          "id": "c3",
+          "text": "Capture network flows and generate a traffic baseline"
+        },
+        {
+          "id": "c4",
+          "text": "Perform asset enumeration and generate an inventory report"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Wireless devices: site surveys and heat maps",
+      "explanation": "A site survey evaluates the RF environment, while a heat map visualizes coverage and signal characteristics to support access-point placement.",
+      "distinction": "Network security scans evaluate vulnerabilities; they do not map radio-frequency coverage."
+    },
+    {
+      "id": "q8",
+      "stem": "A SIEM generates hundreds of alerts each day for an approved vulnerability scanner. Analysts confirm the scanner's traffic is expected and want to reduce repeated benign alerts without disabling detection of similar traffic from other systems. What is the BEST action?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Tune the alert rule to account for the approved scanner"
+        },
+        {
+          "id": "c2",
+          "text": "Disable the alert rule for the entire network"
+        },
+        {
+          "id": "c3",
+          "text": "Quarantine the scanner whenever the rule triggers"
+        },
+        {
+          "id": "c4",
+          "text": "Archive the scanner logs before SIEM ingestion"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Alert response and remediation: alert tuning",
+      "explanation": "Alert tuning can suppress or adjust known benign activity while preserving detection for unapproved systems exhibiting the same behavior.",
+      "distinction": "Disabling the rule removes useful detection broadly, while tuning addresses the known benign source specifically."
+    },
+    {
+      "id": "q9",
+      "stem": "A company purchases 200 laptops. Security management wants each laptop associated with a responsible business unit and assigned a sensitivity designation before deployment. Which asset-management activities MOST directly accomplish this?",
+      "type": "multi",
+      "requiredSelections": 2,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Assign ownership"
+        },
+        {
+          "id": "c2",
+          "text": "Assign classification"
+        },
+        {
+          "id": "c3",
+          "text": "Perform sanitization"
+        },
+        {
+          "id": "c4",
+          "text": "Perform enumeration"
+        }
+      ],
+      "correct": [
+        "c1",
+        "c2"
+      ],
+      "objective": "4.2 - Assignment/accounting: ownership and classification",
+      "explanation": "Ownership establishes accountability for the asset, while classification associates the asset or its information with an appropriate sensitivity level.",
+      "distinction": "Enumeration and inventory help discover and track assets but do not establish business accountability or sensitivity classification."
+    },
+    {
+      "id": "q10",
+      "stem": "A security team wants a standardized machine-readable framework that can be used to evaluate system configurations against defined security requirements. Which tool or standard BEST matches this requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "SCAP"
+        },
+        {
+          "id": "c2",
+          "text": "NetFlow"
+        },
+        {
+          "id": "c3",
+          "text": "SNMP"
+        },
+        {
+          "id": "c4",
+          "text": "RADIUS"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring tools: SCAP",
+      "explanation": "Security Content Automation Protocol provides standardized formats and mechanisms for communicating and evaluating security configuration and vulnerability information.",
+      "distinction": "SCAP supports standardized security assessment content, while NetFlow and SNMP primarily provide operational monitoring data."
+    },
+    {
+      "id": "q11",
+      "stem": "An industrial controller performs safety-critical operations with strict timing deadlines. Applying an ordinary workstation patch could change scheduling behavior and interrupt the physical process. Which characteristic MOST strongly explains the additional hardening constraint?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "The controller uses a real-time operating system with deterministic timing requirements"
+        },
+        {
+          "id": "c2",
+          "text": "The controller uses an embedded operating system with limited storage capacity"
+        },
+        {
+          "id": "c3",
+          "text": "The controller uses a cloud operating system with elastic resource requirements"
+        },
+        {
+          "id": "c4",
+          "text": "The controller uses a mobile operating system with intermittent connectivity requirements"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Hardening targets: RTOS",
+      "explanation": "An RTOS is designed for deterministic response within defined timing constraints. Security changes must be evaluated for their impact on those timing guarantees.",
+      "distinction": "Embedded systems may have resource constraints, but deterministic execution deadlines specifically distinguish RTOS environments."
+    },
+    {
+      "id": "q12",
+      "stem": "A researcher identifies a previously unknown vulnerability in a company's public application. The organization wants external researchers to report such findings through an authorized process and may compensate valid discoveries. Which program BEST supports this objective?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "A responsible disclosure program with a bug bounty"
+        },
+        {
+          "id": "c2",
+          "text": "A penetration testing program with mandatory remediation"
+        },
+        {
+          "id": "c3",
+          "text": "A vulnerability scanning program with automated patching"
+        },
+        {
+          "id": "c4",
+          "text": "A threat intelligence program with proprietary feeds"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Identification methods: responsible disclosure and bug bounty",
+      "explanation": "Responsible disclosure establishes an authorized reporting mechanism, and a bug bounty can provide compensation for qualifying vulnerability discoveries.",
+      "distinction": "A penetration test is commissioned testing by authorized testers, whereas a disclosure program provides a channel for independently discovered vulnerabilities."
+    },
+    {
+      "id": "q13",
+      "stem": "A company wants employee laptops to remain corporate property while allowing users to install approved personal applications and use the devices for limited personal activities. Which deployment model BEST fits the requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "COPE"
+        },
+        {
+          "id": "c2",
+          "text": "BYOD"
+        },
+        {
+          "id": "c3",
+          "text": "CYOD"
+        },
+        {
+          "id": "c4",
+          "text": "VDI"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Mobile deployment models: COPE",
+      "explanation": "Corporate-owned, personally enabled devices are purchased and owned by the organization but permit controlled personal use.",
+      "distinction": "CYOD concerns selecting an approved device, while COPE specifically establishes corporate ownership with permitted personal use."
+    },
+    {
+      "id": "q14",
+      "stem": "A monitoring platform must notify administrators immediately when a managed router reports that a redundant power supply has failed. Which mechanism is MOST appropriate?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "SNMP trap"
+        },
+        {
+          "id": "c2",
+          "text": "NetFlow record"
+        },
+        {
+          "id": "c3",
+          "text": "SCAP benchmark"
+        },
+        {
+          "id": "c4",
+          "text": "Vulnerability scan"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring tools: SNMP traps",
+      "explanation": "An SNMP trap allows a managed network device to send an unsolicited event notification to the monitoring system.",
+      "distinction": "NetFlow reports traffic-flow information, whereas an SNMP trap communicates a device status event."
+    },
+    {
+      "id": "q15",
+      "stem": "An application security team needs to identify vulnerabilities that appear only while a web application is executing and processing requests. Which identification method is MOST appropriate?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Dynamic analysis"
+        },
+        {
+          "id": "c2",
+          "text": "Static analysis"
+        },
+        {
+          "id": "c3",
+          "text": "Package monitoring"
+        },
+        {
+          "id": "c4",
+          "text": "System configuration auditing"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Identification methods: dynamic application analysis",
+      "explanation": "Dynamic analysis evaluates an application while it is running and can reveal vulnerabilities that depend on runtime behavior and request processing.",
+      "distinction": "Static analysis inspects code without execution, while the requirement specifically concerns runtime behavior."
+    },
+    {
+      "id": "q16",
+      "stem": "Security administrators establish an approved configuration for Windows workstations. Six months later they discover that local configuration changes and newly installed software have caused many systems to diverge from the standard. Which baseline activity was MOST deficient?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Maintaining the baseline"
+        },
+        {
+          "id": "c2",
+          "text": "Establishing the baseline"
+        },
+        {
+          "id": "c3",
+          "text": "Deploying the baseline"
+        },
+        {
+          "id": "c4",
+          "text": "Classifying the baseline"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Secure baselines: maintain",
+      "explanation": "Baseline maintenance includes ongoing verification and updates needed to prevent or identify configuration drift over time.",
+      "distinction": "Deployment applies the initial standard; maintenance addresses continued conformance after deployment."
+    },
+    {
+      "id": "q17",
+      "stem": "A company is retiring an application but must preserve transaction records for seven years because of a regulatory requirement. Which consideration should MOST directly determine when those records can be deleted?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "The organization's data retention requirement"
+        },
+        {
+          "id": "c2",
+          "text": "The application's vulnerability classification"
+        },
+        {
+          "id": "c3",
+          "text": "The storage system's hardware lifecycle"
+        },
+        {
+          "id": "c4",
+          "text": "The application's software inventory status"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.2 - Disposal/decommissioning: data retention",
+      "explanation": "Records must remain available for the period required by applicable retention policy or regulation even when the application itself is decommissioned.",
+      "distinction": "Asset retirement and data-retention obligations have separate lifecycles; decommissioning an application does not automatically authorize deletion of its records."
+    },
+    {
+      "id": "q18",
+      "stem": "A SIEM correlation rule identifies a workstation contacting known malicious infrastructure. Endpoint antivirus simultaneously detects a malicious executable on the same workstation. Which TWO actions are MOST appropriate as immediate alert response measures? Select TWO.",
+      "type": "multi",
+      "requiredSelections": 2,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Quarantine the detected malicious file"
+        },
+        {
+          "id": "c2",
+          "text": "Isolate or otherwise contain the affected endpoint"
+        },
+        {
+          "id": "c3",
+          "text": "Lower the rule sensitivity to suppress similar alerts"
+        },
+        {
+          "id": "c4",
+          "text": "Archive the active alerts before taking containment action"
+        }
+      ],
+      "correct": [
+        "c1",
+        "c2"
+      ],
+      "objective": "4.4 - Alert response and remediation: quarantine and remediation",
+      "explanation": "Quarantining the malicious object prevents its continued execution, while isolating the affected endpoint limits further malicious communications and spread.",
+      "distinction": "Alert tuning addresses noisy or inaccurate detection; it is not the appropriate response to a corroborated malware infection."
+    },
+    {
+      "id": "q19",
+      "stem": "A software vendor releases an update package. Administrators need assurance that the package originated from the vendor and was not modified after the vendor released it. Which control BEST provides this assurance?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Code signing"
+        },
+        {
+          "id": "c2",
+          "text": "Input validation"
+        },
+        {
+          "id": "c3",
+          "text": "Sandboxing"
+        },
+        {
+          "id": "c4",
+          "text": "Secure cookies"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Application security: code signing",
+      "explanation": "A valid digital signature can authenticate the software publisher and detect modification of the signed package.",
+      "distinction": "Sandboxing limits execution impact, whereas code signing provides publisher authentication and integrity verification before execution."
+    },
+    {
+      "id": "q20",
+      "stem": "A company has patched a vulnerability across 4,000 endpoints. Management wants evidence that the vulnerability is no longer detectable across the environment. What should the security team do NEXT?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Rescan the affected systems"
+        },
+        {
+          "id": "c2",
+          "text": "Recalculate the original CVSS score"
+        },
+        {
+          "id": "c3",
+          "text": "Remove the associated CVE from reports"
+        },
+        {
+          "id": "c4",
+          "text": "Create an exception for the patched systems"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Validation of remediation: rescanning",
+      "explanation": "Rescanning directly tests whether the previously detected vulnerability remains observable after remediation.",
+      "distinction": "Applying a patch is the remediation action; rescanning validates that the remediation actually eliminated the detectable vulnerability."
+    },
+    {
+      "id": "q21",
+      "stem": "A security engineer wants to centralize logs from servers, applications, and network infrastructure so events can be correlated and alerts generated from activity occurring across multiple systems. Which tool BEST supports this requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "SIEM"
+        },
+        {
+          "id": "c2",
+          "text": "DLP"
+        },
+        {
+          "id": "c3",
+          "text": "SNMP"
+        },
+        {
+          "id": "c4",
+          "text": "SCAP"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring tools: SIEM and log aggregation",
+      "explanation": "A SIEM aggregates security data from multiple sources, correlates events, and generates alerts based on defined analytics and rules.",
+      "distinction": "Individual monitoring technologies can generate useful events, but SIEM is specifically designed for centralized aggregation and correlation."
+    },
+    {
+      "id": "q22",
+      "stem": "A vulnerability has a high base CVSS score, but the affected application contains no sensitive information, is reachable only from a restricted administrative network, and has multiple existing controls limiting exploitation. Which factor MOST directly supports lowering its organizational remediation priority?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Environmental variables"
+        },
+        {
+          "id": "c2",
+          "text": "CVE enumeration"
+        },
+        {
+          "id": "c3",
+          "text": "Package monitoring"
+        },
+        {
+          "id": "c4",
+          "text": "Responsible disclosure"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Vulnerability analysis: environmental variables",
+      "explanation": "Environmental factors account for how a vulnerability affects the organization's actual systems, exposure, protections, and business context.",
+      "distinction": "The CVE identifies the vulnerability, while environmental variables modify its practical importance within a particular organization."
+    },
+    {
+      "id": "q23",
+      "stem": "An organization allows employees to select a smartphone from a short list of approved models. After selection, the company purchases the device and centrally manages it. Which deployment model is MOST closely represented?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "CYOD"
+        },
+        {
+          "id": "c2",
+          "text": "BYOD"
+        },
+        {
+          "id": "c3",
+          "text": "COPE"
+        },
+        {
+          "id": "c4",
+          "text": "VDI"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Mobile deployment models: CYOD",
+      "explanation": "Choose your own device allows users to select from an organization-approved set of devices, retaining organizational control over permitted hardware.",
+      "distinction": "COPE emphasizes corporate ownership with personal enablement, while CYOD emphasizes user selection from an approved device catalog."
+    },
+    {
+      "id": "q24",
+      "stem": "A security manager discovers several cloud virtual machines that do not appear in the organization's configuration management database. The manager wants to determine the complete set of deployed assets before assigning owners. Which activity should occur FIRST?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Enumerate the environment and reconcile the inventory"
+        },
+        {
+          "id": "c2",
+          "text": "Classify the environment and update retention requirements"
+        },
+        {
+          "id": "c3",
+          "text": "Sanitize the environment and document disposal certification"
+        },
+        {
+          "id": "c4",
+          "text": "Patch the environment and establish vulnerability exceptions"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.2 - Monitoring/asset tracking: inventory and enumeration",
+      "explanation": "Enumeration discovers deployed assets so the inventory can accurately represent what exists before ownership and lifecycle controls are applied.",
+      "distinction": "Inventory is the maintained record, while enumeration is the discovery activity that can expose previously unknown assets."
+    },
+    {
+      "id": "q25",
+      "stem": "A company wants to prevent confidential documents from being copied to unauthorized external storage or transmitted through disallowed channels. Which monitoring tool is MOST directly designed for this purpose?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "DLP"
+        },
+        {
+          "id": "c2",
+          "text": "SIEM"
+        },
+        {
+          "id": "c3",
+          "text": "NetFlow"
+        },
+        {
+          "id": "c4",
+          "text": "SCAP"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring tools: DLP",
+      "explanation": "DLP technologies monitor and enforce policies governing movement or use of sensitive information and can block prohibited transfers.",
+      "distinction": "SIEM can correlate events describing data movement, but DLP is designed to recognize sensitive content and enforce data-handling policies."
+    },
+    {
+      "id": "q26",
+      "stem": "An organization discovers a critical vulnerability in a legacy industrial system. The vendor no longer supplies patches, and immediate replacement would interrupt a production process for several months. Which response is MOST appropriate while replacement is planned?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Segment the system and implement compensating controls"
+        },
+        {
+          "id": "c2",
+          "text": "Accept the vulnerability and discontinue monitoring"
+        },
+        {
+          "id": "c3",
+          "text": "Increase the CVSS score and continue normal connectivity"
+        },
+        {
+          "id": "c4",
+          "text": "Remove the vulnerability report and defer further assessment"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Vulnerability response: segmentation and compensating controls",
+      "explanation": "When direct remediation is unavailable, segmentation and compensating controls can reduce exposure while a permanent solution is prepared.",
+      "distinction": "An exception documents an approved deviation; compensating controls actively reduce the risk created by the unresolved vulnerability."
+    },
+    {
+      "id": "q27",
+      "stem": "A company is defining a new hardened configuration for Linux servers. Which TWO activities correspond most directly to establishing and then deploying a secure baseline? Select TWO.",
+      "type": "multi",
+      "requiredSelections": 2,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Define the approved security settings and required services"
+        },
+        {
+          "id": "c2",
+          "text": "Apply the approved configuration to the server population"
+        },
+        {
+          "id": "c3",
+          "text": "Review future configuration drift and update the standard"
+        },
+        {
+          "id": "c4",
+          "text": "Archive operational logs and generate monitoring reports"
+        }
+      ],
+      "correct": [
+        "c1",
+        "c2"
+      ],
+      "objective": "4.1 - Secure baselines: establish and deploy",
+      "explanation": "Establishing defines the approved configuration, and deploying applies that configuration to the target systems.",
+      "distinction": "Ongoing drift detection and revision belong to baseline maintenance rather than initial establishment or deployment."
+    },
+    {
+      "id": "q28",
+      "stem": "A procurement team is evaluating new network appliances. The security department wants security requirements considered before contracts are signed rather than after the equipment arrives. Which asset lifecycle phase is MOST relevant?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Acquisition and procurement"
+        },
+        {
+          "id": "c2",
+          "text": "Assignment and accounting"
+        },
+        {
+          "id": "c3",
+          "text": "Monitoring and asset tracking"
+        },
+        {
+          "id": "c4",
+          "text": "Disposal and decommissioning"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.2 - Acquisition/procurement process",
+      "explanation": "Security requirements should be incorporated into acquisition and procurement so products and contractual terms meet organizational needs before purchase.",
+      "distinction": "Assignment and tracking occur after acquisition, whereas the scenario requires security criteria to affect the purchasing decision itself."
+    },
+    {
+      "id": "q29",
+      "stem": "A security operations center receives thousands of events from servers, applications, and firewalls. Analysts need older events preserved for later investigations even after they are no longer needed for immediate alerting. Which monitoring activity BEST addresses this requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Archiving"
+        },
+        {
+          "id": "c2",
+          "text": "Alert tuning"
+        },
+        {
+          "id": "c3",
+          "text": "Scanning"
+        },
+        {
+          "id": "c4",
+          "text": "Quarantine"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.4 - Monitoring activities: archiving",
+      "explanation": "Archiving preserves historical monitoring information so it remains available for future investigations, audit needs, or analysis.",
+      "distinction": "Log aggregation centralizes current data, while archiving specifically addresses longer-term preservation."
+    },
+    {
+      "id": "q30",
+      "stem": "A development organization relies on hundreds of open-source software libraries. The security team wants automated notification when a component in the application's dependency set becomes associated with a newly disclosed vulnerability. Which identification method BEST fits the requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Package monitoring"
+        },
+        {
+          "id": "c2",
+          "text": "Dynamic analysis"
+        },
+        {
+          "id": "c3",
+          "text": "Network enumeration"
+        },
+        {
+          "id": "c4",
+          "text": "Configuration benchmarking"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Identification methods: package monitoring",
+      "explanation": "Package monitoring tracks software dependencies and can identify newly disclosed vulnerabilities affecting components used by an application.",
+      "distinction": "Dynamic analysis evaluates runtime application behavior, whereas package monitoring tracks vulnerability status of third-party dependencies."
+    },
+    {
+      "id": "q31",
+      "stem": "A company is deploying smart environmental sensors that cannot run conventional endpoint security agents and receive firmware updates only occasionally. Which approach BEST reduces the security exposure of these devices?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Place the devices on a restricted network and limit permitted communications"
+        },
+        {
+          "id": "c2",
+          "text": "Place the devices on the workstation network and increase antivirus scanning"
+        },
+        {
+          "id": "c3",
+          "text": "Place the devices on the server network and enable interactive administration"
+        },
+        {
+          "id": "c4",
+          "text": "Place the devices on the guest network and permit unrestricted outbound access"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Hardening targets: IoT and embedded systems",
+      "explanation": "IoT and embedded devices may have limited native security capabilities, making network isolation and strict communication controls important hardening measures.",
+      "distinction": "When endpoint protections are constrained, reducing reachable attack surface through network restrictions is more effective than relying on agents the devices cannot support."
+    },
+    {
+      "id": "q32",
+      "stem": "A vulnerability report references CVE-2026-12345. What is the PRIMARY purpose of the CVE identifier?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Provide a standardized identifier for a publicly known vulnerability"
+        },
+        {
+          "id": "c2",
+          "text": "Provide an organizational risk score for a vulnerable system"
+        },
+        {
+          "id": "c3",
+          "text": "Provide the financial exposure caused by successful exploitation"
+        },
+        {
+          "id": "c4",
+          "text": "Provide the required remediation deadline for the vulnerability"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Vulnerability analysis: CVE",
+      "explanation": "CVE provides standardized identifiers that allow security products, researchers, and organizations to refer consistently to specific publicly known vulnerabilities.",
+      "distinction": "CVE identifies a vulnerability; scoring and organizational prioritization are separate functions."
+    },
+    {
+      "id": "q33",
+      "stem": "A security team needs to determine whether systems comply with an approved operating-system hardening benchmark. The organization wants assessments to run locally on some endpoints but remotely against systems where installing additional software is prohibited. Which TWO assessment approaches should the team consider? Select TWO.",
+      "type": "multi",
+      "requiredSelections": 2,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Agent-based assessment"
+        },
+        {
+          "id": "c2",
+          "text": "Agentless assessment"
+        },
+        {
+          "id": "c3",
+          "text": "Flow-based assessment"
+        },
+        {
+          "id": "c4",
+          "text": "Trap-based assessment"
+        }
+      ],
+      "correct": [
+        "c1",
+        "c2"
+      ],
+      "objective": "4.4 - Monitoring tools: agents and agentless approaches",
+      "explanation": "Agent-based assessment uses installed software on the target, while agentless assessment collects information remotely without requiring a persistent endpoint agent.",
+      "distinction": "NetFlow- and SNMP-style telemetry can monitor infrastructure but are not substitutes for the requested host configuration assessment approaches."
+    },
+    {
+      "id": "q34",
+      "stem": "A web application places session identifiers in browser cookies. Security engineers want to reduce the risk that client-side scripts can access those identifiers and that browsers transmit them over unencrypted connections. Which application-security measure is MOST relevant?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Configure secure cookie attributes"
+        },
+        {
+          "id": "c2",
+          "text": "Apply static code signing attributes"
+        },
+        {
+          "id": "c3",
+          "text": "Configure network flow attributes"
+        },
+        {
+          "id": "c4",
+          "text": "Apply asset classification attributes"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Application security: secure cookies",
+      "explanation": "Cookie security attributes can restrict transmission to encrypted connections and limit script access to sensitive session cookies.",
+      "distinction": "Code signing validates software origin and integrity; it does not control how browser session cookies are handled."
+    },
+    {
+      "id": "q35",
+      "stem": "A company's inventory lists 1,850 workstations, but an authenticated discovery process identifies 1,916 active workstations. What is the MOST important security implication of this discrepancy?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Untracked systems may escape required security controls and lifecycle management"
+        },
+        {
+          "id": "c2",
+          "text": "Tracked systems may automatically receive incorrect vulnerability scores"
+        },
+        {
+          "id": "c3",
+          "text": "Untracked systems will necessarily bypass all network authentication controls"
+        },
+        {
+          "id": "c4",
+          "text": "Tracked systems will necessarily violate data retention requirements"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.2 - Monitoring/asset tracking: inventory accuracy",
+      "explanation": "Assets missing from inventory may not receive patching, monitoring, ownership, decommissioning, or other required security processes.",
+      "distinction": "The central risk is loss of management visibility; the discrepancy alone does not prove that specific technical controls have already failed."
+    },
+    {
+      "id": "q36",
+      "stem": "A security administrator receives an alert for malware on a file server. Investigation shows that a legitimate administrative utility triggered the antivirus signature and no malicious behavior occurred. How should this detection be classified?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "False positive"
+        },
+        {
+          "id": "c2",
+          "text": "False negative"
+        },
+        {
+          "id": "c3",
+          "text": "True negative"
+        },
+        {
+          "id": "c4",
+          "text": "Compensating control"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Vulnerability analysis: false positives and false negatives",
+      "explanation": "The security tool reported malicious activity even though the activity was legitimate, making the detection a false positive.",
+      "distinction": "A false negative occurs when a real malicious or vulnerable condition exists but the security mechanism fails to detect it."
+    },
+    {
+      "id": "q37",
+      "stem": "A corporation wants users to authenticate to enterprise Wi-Fi using centrally managed individual credentials rather than a shared wireless password. Which configuration BEST supports the requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "WPA3-Enterprise with centralized RADIUS authentication"
+        },
+        {
+          "id": "c2",
+          "text": "WPA3-Personal with a centrally rotated pre-shared key"
+        },
+        {
+          "id": "c3",
+          "text": "WPA2-Personal with a centrally distributed pre-shared key"
+        },
+        {
+          "id": "c4",
+          "text": "Open Wi-Fi with centralized captive-portal authentication"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.1 - Wireless security settings: WPA3 and RADIUS",
+      "explanation": "WPA3-Enterprise supports enterprise authentication mechanisms and can use RADIUS to authenticate individual users through centralized AAA services.",
+      "distinction": "Personal-mode wireless security relies on shared credentials, whereas the requirement calls for centrally managed individual authentication."
+    },
+    {
+      "id": "q38",
+      "stem": "A monitoring team wants to detect security-relevant conditions across three layers of an enterprise environment. Which THREE categories are explicitly part of monitoring computing resources? Select THREE.",
+      "type": "multi",
+      "requiredSelections": 3,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Systems"
+        },
+        {
+          "id": "c2",
+          "text": "Applications"
+        },
+        {
+          "id": "c3",
+          "text": "Infrastructure"
+        },
+        {
+          "id": "c4",
+          "text": "Procurement"
+        }
+      ],
+      "correct": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "objective": "4.4 - Monitoring computing resources",
+      "explanation": "Security monitoring under objective 4.4 encompasses systems, applications, and infrastructure.",
+      "distinction": "Procurement is an asset-management lifecycle activity under objective 4.2 rather than a computing-resource monitoring category."
+    },
+    {
+      "id": "q39",
+      "stem": "An organization plans to retire several servers and reuse their storage drives in a lower-sensitivity internal environment. Security policy requires previous information to be made unrecoverable while preserving the media for reuse. Which approach BEST satisfies the requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Sanitize the drives using an approved reusable-media procedure"
+        },
+        {
+          "id": "c2",
+          "text": "Physically destroy the drives using an approved destruction procedure"
+        },
+        {
+          "id": "c3",
+          "text": "Retain the drives indefinitely using an approved archival procedure"
+        },
+        {
+          "id": "c4",
+          "text": "Remove asset labels using an approved decommissioning procedure"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.2 - Disposal/decommissioning: sanitization",
+      "explanation": "Sanitization removes previous information to the required standard while allowing the storage media to remain usable.",
+      "distinction": "Physical destruction can provide strong data protection but directly conflicts with the stated requirement to reuse the drives."
+    },
+    {
+      "id": "q40",
+      "stem": "A security team needs independent evidence that a recently completed vulnerability remediation followed the organization's required process and that the affected systems now satisfy the expected control requirements. Which validation activity is MOST appropriate?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Perform an audit of the remediation and resulting control state"
+        },
+        {
+          "id": "c2",
+          "text": "Recalculate the vulnerability's original base CVSS score"
+        },
+        {
+          "id": "c3",
+          "text": "Request a new CVE identifier for the remediated vulnerability"
+        },
+        {
+          "id": "c4",
+          "text": "Create an exemption for the remediated systems"
+        }
+      ],
+      "correct": [
+        "c1"
+      ],
+      "objective": "4.3 - Validation of remediation: audit and verification",
+      "explanation": "An audit can independently examine whether the remediation process was followed and whether required controls are now properly implemented.",
+      "distinction": "Rescanning verifies whether a technical finding remains detectable, while an audit can additionally validate adherence to the required remediation process and control requirements."
+    }
+  ]
+}

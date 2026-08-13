@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "id": "sy0-701-module1-5q-20260813",
+    "title": "CompTIA Security+ SY0-701",
+    "scope": "Module 1 - General Security Concepts (Objectives 1.1-1.4)",
+    "masteryThreshold": 95
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "stem": "A company requires administrators to submit proposed firewall-rule changes for review, document affected services, test the change in a staging environment, and define a method to restore the previous configuration. Which element is MOST important for reducing the impact if the production change causes an unexpected outage?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "A documented backout plan with the prior configuration available"
+        },
+        {
+          "id": "c2",
+          "text": "A documented maintenance window with affected stakeholders notified"
+        },
+        {
+          "id": "c3",
+          "text": "A documented impact analysis with dependent services identified"
+        },
+        {
+          "id": "c4",
+          "text": "A documented approval record with the change owner identified"
+        }
+      ],
+      "correct": ["c1"],
+      "objective": "1.3 Change management - backout plans",
+      "explanation": "A backout plan provides the defined procedure and prior state needed to reverse a failed production change and restore service. The other controls improve planning and governance but do not themselves provide the recovery procedure.",
+      "distinction": "Impact analysis, approval, and maintenance scheduling reduce change risk; a backout plan specifically enables restoration after the change fails."
+    },
+    {
+      "id": "q2",
+      "stem": "A security architect is designing remote access to an internal application. The organization wants each access request evaluated using the user's identity, device condition, and current risk signals rather than trusting the connection because it originates from the corporate network. Which approach BEST satisfies this requirement?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Zero Trust with adaptive identity and policy-driven access control"
+        },
+        {
+          "id": "c2",
+          "text": "Network segmentation with firewall rules and trusted internal zones"
+        },
+        {
+          "id": "c3",
+          "text": "Role-based access control with static permissions and network restrictions"
+        },
+        {
+          "id": "c4",
+          "text": "Defense in depth with VPN access and perimeter-based trust decisions"
+        }
+      ],
+      "correct": ["c1"],
+      "objective": "1.2 Fundamental security concepts - Zero Trust",
+      "explanation": "Zero Trust evaluates access dynamically and avoids granting implicit trust based on network location. Adaptive identity and policy-driven access control allow identity, device posture, and risk context to influence each decision.",
+      "distinction": "Traditional segmentation, RBAC, and VPN controls can restrict access, but they do not inherently eliminate implicit network trust or continuously incorporate contextual risk into access decisions."
+    },
+    {
+      "id": "q3",
+      "stem": "A legacy industrial controller cannot support the company's required multifactor authentication mechanism, and replacing the controller will take six months. Security personnel place the controller on a tightly restricted network segment and require access through a hardened jump server with multifactor authentication. What type of control BEST describes these temporary safeguards?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "A compensating control implemented through segmentation and controlled administrative access"
+        },
+        {
+          "id": "c2",
+          "text": "A preventive control implemented through segmentation and controlled administrative access"
+        },
+        {
+          "id": "c3",
+          "text": "A corrective control implemented through segmentation and controlled administrative access"
+        },
+        {
+          "id": "c4",
+          "text": "A directive control implemented through segmentation and controlled administrative access"
+        }
+      ],
+      "correct": ["c1"],
+      "objective": "1.1 Security controls - compensating controls",
+      "explanation": "The safeguards are being used because the required primary control cannot currently be implemented. That makes them compensating controls, even though their mechanisms also have preventive effects.",
+      "distinction": "Preventive describes what a control does; compensating describes its role as an alternative when the preferred or required control is not feasible."
+    },
+    {
+      "id": "q4",
+      "stem": "A company must allow customers to verify that software updates were issued by the company and were not modified after release. Which solution BEST provides both properties?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "Digitally sign the update with the company's private key and verify it with the corresponding public key"
+        },
+        {
+          "id": "c2",
+          "text": "Encrypt the update with the company's public key and decrypt it with the corresponding private key"
+        },
+        {
+          "id": "c3",
+          "text": "Hash the update with a salted cryptographic hash and distribute the salt with the update"
+        },
+        {
+          "id": "c4",
+          "text": "Encrypt the update with a symmetric key and distribute the key through a separate secured channel"
+        }
+      ],
+      "correct": ["c1"],
+      "objective": "1.4 Cryptographic solutions - digital signatures",
+      "explanation": "A digital signature created with the publisher's private key allows recipients to verify the publisher's identity and detect modification of the signed data using the corresponding public key.",
+      "distinction": "Encryption primarily protects confidentiality and hashing alone can demonstrate integrity; a digital signature combines integrity verification with authenticated origin and supports non-repudiation."
+    },
+    {
+      "id": "q5",
+      "stem": "A data-center entrance already uses access badges, but management is concerned that one authorized employee can hold the door open for another person whose badge was never validated. Which physical security control would BEST address this specific problem?",
+      "type": "single",
+      "requiredSelections": 1,
+      "choices": [
+        {
+          "id": "c1",
+          "text": "An access control vestibule that validates passage through sequential controlled doors"
+        },
+        {
+          "id": "c2",
+          "text": "A security guard who observes entry activity and reviews presented credentials"
+        },
+        {
+          "id": "c3",
+          "text": "Video surveillance that records entry activity and supports later investigation"
+        },
+        {
+          "id": "c4",
+          "text": "Perimeter fencing that restricts approach routes and channels visitors toward entrances"
+        }
+      ],
+      "correct": ["c1"],
+      "objective": "1.2 Fundamental security concepts - physical security",
+      "explanation": "An access control vestibule uses sequential controlled doors to restrict passage and is specifically suited to reducing unauthorized piggybacking or tailgating at a protected entrance.",
+      "distinction": "Guards and surveillance can deter or detect unauthorized entry, while fencing controls perimeter approach; the vestibule directly constrains one controlled passage event at a time."
+    }
+  ]
+}
