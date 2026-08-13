@@ -8,8 +8,8 @@ The prompt allows you to target specific test domains for focused practice or ge
 
 The repository contains:
 
-* `secplus-test-engine.html` — reusable browser-based test runner
-* `test-generator-prompt.md` — instructs an AI model to produce compatible JSON tests
+* `test-engine.html` — reusable browser-based test runner
+* `SY0-701.md` — instructs an AI model to produce practice tests for CompTIA Security+ SY0-701 
 
 ## Usage
 
@@ -22,7 +22,7 @@ Questions: 20
 ```
 
 3. Save the generated output as a `.json` file.
-4. Open `secplus-test-engine.html` in your browser.
+4. Open `test-engine.html` in your browser.
 5. Upload the JSON file.
 6. Complete the test and review your results.
 
