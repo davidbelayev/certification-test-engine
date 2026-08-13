@@ -60,6 +60,12 @@ button,input{font:inherit}
 .review:first-of-type{border-top:0}
 .review .ans{margin:7px 0}
 .diag{display:grid;grid-template-columns:1fr auto;gap:7px 16px;max-width:680px}
+/* Ensure label column (odd grid children) is left-aligned */
+.diag > div:nth-child(2n+1){
+  justify-self:start;
+  text-align:left;
+}
+.diag .objBtn{ display:block }
 .small{font-size:.92rem;color:var(--muted)}
 .secondaryRow{display:flex;justify-content:flex-end;margin-top:18px}
 .secondaryRow button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 13px;border-radius:9px;cursor:pointer}
@@ -76,6 +82,8 @@ button,input{font:inherit}
 .reviewBtn:hover{background:var(--soft)}
 .objBtn{border:0;background:transparent;color:var(--accent);font-weight:700;cursor:pointer;padding:2px 6px}
 .objBtn:hover{text-decoration:underline}
+/* Force left-aligned, full-width objective buttons inside results diagnostics */
+#resultsPanel .diag .objBtn{display:block;text-align:left;width:100%;padding:2px 6px}
 .reviewOpen{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:9px;cursor:pointer}
 .reviewOpen:hover{background:var(--soft)}
 @media(max-width:620px){
@@ -101,7 +109,7 @@ button,input{font:inherit}
     <h2>Load test</h2>
     <p>Select a JSON file that follows the test schema expected by this page. The file is read locally in your browser and is not uploaded anywhere.</p>
     <div class="filebox">
-      <input id="jsonInput" type="file" accept=".json,application/json">
+      <input id="jsonInput" type="file" accept=".json,application/json" multiple>
     </div>
     <div class="loadstatus" id="loadStatus"></div>
   </section>
@@ -386,21 +394,64 @@ function initializeTest(data){
 }
 
 jsonInput.addEventListener("change", async e=>{
-  const file=e.target.files && e.target.files[0];
-  if(!file) return;
-  loadStatus.textContent="";
+  const files = Array.from(e.target.files || []);
+  if(!files.length) return;
+  loadStatus.textContent = "";
 
   try{
-    const text=await file.text();
-    const data=JSON.parse(text);
-    const errors=validateTest(data);
-    if(errors.length){
-      loadStatus.textContent="Invalid test JSON:\n• "+errors.join("\n• ");
+    // Read and parse all files in parallel
+    const parsed = await Promise.all(files.map(async file=>{
+      const text = await file.text();
+      const data = JSON.parse(text);
+      const errors = validateTest(data);
+      return { file, data, errors };
+    }));
+
+    // If any file has validation errors, report and abort
+    const bad = parsed.filter(p=>p.errors && p.errors.length);
+    if(bad.length){
+      loadStatus.textContent = bad.map(b=>`${b.file.name}: ${b.errors.join('; ')}`).join('\n');
       return;
     }
-    initializeTest(data);
+
+    // Aggregate into a unified test object
+    const aggregated = { metadata: { id: `aggregated-${Date.now()}`, title: '', scope: '', masteryThreshold: 95, disclaimer: '' }, questions: [] };
+    const titles = [];
+    const scopes = new Set();
+
+    parsed.forEach((p, idx)=>{
+      const fname = p.file.name.replace(/\.[^.]+$/, '');
+      const safe = fname.replace(/[^a-z0-9]+/gi,'_') || `file${idx+1}`;
+      const prefix = `${safe}_${idx+1}`;
+      const m = p.data.metadata || {};
+      if(m.title) titles.push(m.title);
+      if(m.scope) scopes.add(m.scope);
+      if(typeof m.disclaimer === 'string' && m.disclaimer.trim()){
+        aggregated.metadata.disclaimer = aggregated.metadata.disclaimer
+          ? (aggregated.metadata.disclaimer + ' | ' + m.disclaimer.trim())
+          : m.disclaimer.trim();
+      }
+      if(Number.isFinite(m.masteryThreshold)){
+        aggregated.metadata.masteryThreshold = Math.min(aggregated.metadata.masteryThreshold, m.masteryThreshold);
+      }
+
+      p.data.questions.forEach(q=>{
+        // clone question and prefix ids so they remain unique across files
+        const newQ = JSON.parse(JSON.stringify(q));
+        newQ.id = `${prefix}__${q.id}`;
+        newQ.choices = q.choices.map(c=>({ ...c, id: `${prefix}__${c.id}` }));
+        newQ.correct = q.correct.map(cid=>`${prefix}__${cid}`);
+        aggregated.questions.push(newQ);
+      });
+    });
+
+    aggregated.metadata.id = `aggregated-${Date.now()}`;
+    aggregated.metadata.title = `Aggregated: ${titles.length?titles.join(' · '):files.map(f=>f.name).join(' · ')}`;
+    aggregated.metadata.scope = scopes.size===1 ? Array.from(scopes)[0] : `${parsed.length} files`;
+
+    initializeTest(aggregated);
   } catch(err){
-    loadStatus.textContent=`Could not load JSON: ${err.message}`;
+    loadStatus.textContent = `Could not load JSON: ${err.message}`;
   }
 });
 
